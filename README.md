@@ -160,15 +160,4 @@ model Product {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
-```
----
-
-# 🧠 Resumen de cómo se conectan:
-
-| Servicio         | Conecta con               | Método de comunicación           |
-|------------------|---------------------------|-----------------------------------|
-| AppController    | time-service              | Microservicio (TCP/Redis/NATS)    |
-| AppController    | graphql-server            | HTTP via GraphQL                  |
-| AppController    | chat-gateway              | WebSocket (socket.io-client)      |
-| graphql-server   | Base de datos vía Prisma  | ORM / Prisma                      |
-| chat-gateway     | Clientes WebSocket        | socket.io                         |
+```              |

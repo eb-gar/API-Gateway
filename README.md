@@ -49,25 +49,6 @@ El proyecto se divide en varios servicios independientes:
 
 ---
 
-## 🔧 Variables de Entorno `.env`
-
-```env
-# Transporte para time-service
-TRANSPORT=redis
-TCP_HOST=127.0.0.1
-TCP_PORT=3001
-REDIS_HOST=127.0.0.1
-REDIS_PORT=6379
-NATS_URL=nats://localhost:4222
-NATS_QUEUE=time_service
-
-# GraphQL
-GRAPHQL_URL=http://localhost:3003/graphql
-
-# WebSocket
-WS_URL=http://localhost:3002
-```
-
 # ▶️ Cómo Ejecutar el Proyecto
 
 ## 1. Instalar dependencias

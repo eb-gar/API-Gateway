@@ -101,6 +101,7 @@ POST http://localhost:3000/producto
 Content-Type: application/json
 
 Body:
+
 {
   "name": "Camiseta",
   

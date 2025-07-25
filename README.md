@@ -28,19 +28,19 @@ El proyecto se divide en varios servicios independientes:
   - `POST /producto`: Crea un producto vía GraphQL.
   - `GET /enviar-mensaje`: Envia mensaje por WebSocket.
 
-### 2. `time-service` (NestJS Microservice)
+### 2. `Microservice-Time` (NestJS Microservice)
 
 - Microservicio con patrón `MessagePattern('get_time')`.
 - Responde con la hora actual de Ecuador.
 - Comunicación mediante **TCP**, **Redis** o **NATS** (según `.env`).
 
-### 3. `graphql-service` (NestJS + GraphQL + Prisma)
+### 3. `Graph-QL` (NestJS + GraphQL + Prisma)
 
 - Servicio con `@Resolver`, `@Query`, `@Mutation`.
 - Modelo: `Product` (con campos `id`, `name`, `description`, `price`, etc.).
 - Prisma ORM para acceso a base de datos.
 
-### 4. `websocket-server` (Socket.IO + NestJS)
+### 4. `Real-time` (Socket.IO + NestJS)
 
 - Gateway WebSocket que permite:
   - Enviar mensajes (`chatMessage`)
@@ -55,7 +55,7 @@ El proyecto se divide en varios servicios independientes:
 ```bash
 npm install
 ```
-Haz esto en cada servicio (api-gateway, graphql-service, websocket-server, time-service).
+Haz esto en cada servicio (API-Gateway, Graph-QL, Real-time, Microservice-Time).
 
 ---
 

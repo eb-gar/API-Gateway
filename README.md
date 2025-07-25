@@ -10,20 +10,20 @@ El proyecto se divide en varios servicios independientes:
 
 | Servicio            | Puerto | Función Principal                                                                 |
 |---------------------|--------|-----------------------------------------------------------------------------------|
-| `api-gateway`       | 3000   | API REST principal: expone endpoints públicos, coordina entre servicios.         |
-| `time-service`      | N/A    | Microservicio que devuelve la hora actual.                                       |
+| `API-gateway`       | 3000   | API REST principal: expone endpoints públicos, coordina entre servicios.         |
+| `Microservice-Time`      | N/A    | Microservicio que devuelve la hora actual.                                       |
 | `websocket-server`  | 3002   | Chat WebSocket que permite enviar/recibir mensajes en tiempo real.               |
-| `graphql-service`   | 3003   | Servicio GraphQL que gestiona productos con Prisma y base de datos.              |
+| `Graph-QL`   | 3003   | Servicio GraphQL que gestiona productos con Prisma y base de datos.              |
 
 ---
 
 ## 🧠 Descripción de Servicios
 
-### 1. `api-gateway` (NestJS REST)
+### 1. `API-gateway` (NestJS REST)
 
 - Exposición de endpoints REST:
-  - `GET /hora`: Consulta la hora al `time-service`.
-  - `GET /productos`: Obtiene productos desde `graphql-service`.
+  - `GET /hora`: Consulta la hora al `Microservice-Time`.
+  - `GET /productos`: Obtiene productos desde `Graph-QL`.
   - `GET /producto/:id`: Consulta un producto por ID.
   - `POST /producto`: Crea un producto vía GraphQL.
   - `GET /enviar-mensaje`: Envia mensaje por WebSocket.
@@ -62,27 +62,27 @@ Haz esto en cada servicio (API-Gateway, Graph-QL, Real-time, Microservice-Time).
 ## 2. Ejecutar cada servicio
 - API Gateway
 ```bash
-cd api-gateway
+cd API Gateway
 npm run start:dev
 ```
 
-- GraphQL Service
+- Graph-QL
 ```bash
-cd graphql-service
+cd Graph-QL
 npx prisma generate
 npx prisma migrate dev --name init
 npm run start:dev
 ```
 
-- WebSocket Server
+- Real-time
 ```bash
-cd websocket-server
+cd Real-time
 npm run start:dev
 ```
 
-- Time Service 
+- Real-time 
 ```bash
-cd time-service
+cd Real-time
 # Asegúrate de definir el transporte en .env
 npm run start:dev
 ```

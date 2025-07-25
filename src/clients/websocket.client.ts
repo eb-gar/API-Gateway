@@ -1,18 +1,23 @@
 import { Injectable } from '@nestjs/common';
-import * as io from 'socket.io-client';
+
+const io = require('socket.io-client');
 
 @Injectable()
 export class WebsocketClient {
-  private socket: ReturnType<typeof io>;
+  private socket: any;
 
   constructor() {
     const url = process.env.WS_URL;
     if (!url) throw new Error('WS_URL no definida');
 
-    this.socket = io(url);
+    this.socket = io(url); 
 
     this.socket.on('connect', () => {
-      console.log('Conectado al WebSocket');
+      console.log('Conectado al WebSocket desde el Gateway');
+    });
+
+    this.socket.onAny((event, ...args) => {
+      console.log('Evento recibido:', event, args);
     });
   }
 

@@ -13,7 +13,7 @@ El proyecto se divide en varios servicios independientes:
 | `api-gateway`       | 3000   | API REST principal: expone endpoints públicos, coordina entre servicios.         |
 | `time-service`      | N/A    | Microservicio que devuelve la hora actual.                                       |
 | `websocket-server`  | 3002   | Chat WebSocket que permite enviar/recibir mensajes en tiempo real.               |
-| `graphql-service`   | 3001   | Servicio GraphQL que gestiona productos con Prisma y base de datos.              |
+| `graphql-service`   | 3003   | Servicio GraphQL que gestiona productos con Prisma y base de datos.              |
 
 ---
 
@@ -97,12 +97,15 @@ GET http://localhost:3000/productos
 - Crear producto:
 
 POST http://localhost:3000/producto
+
 Content-Type: application/json
 
 Body:
 {
   "name": "Camiseta",
+  
   "description": "100% algodón",
+  
   "price": 19.99
 }
 - Consultar hora (via microservicio):
